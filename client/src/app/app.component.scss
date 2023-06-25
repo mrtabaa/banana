@@ -1,0 +1,19 @@
+form {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    div {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.response {
+    background-color: yellow;
+    margin-top: 2rem;
+    padding: 2rem;
+}

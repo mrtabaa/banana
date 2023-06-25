@@ -1,0 +1,68 @@
+<!-- <h1>{{userFg.value.nameCtrl}}</h1> -->
+<h2>Value: {{NameCtrl.value}}</h2>
+<h2>Validity: {{NameCtrl.valid}}</h2>
+<h2>Validity: {{NameCtrl.invalid}}</h2>
+<h2>Dirty: {{NameCtrl.dirty}}</h2>
+<h2>Pristine: {{NameCtrl.pristine}}</h2>
+<h2>Touched: {{NameCtrl.touched}}</h2>
+<h2>Untouched: {{NameCtrl.untouched}}</h2>
+
+<form [formGroup]="userFg">
+    <h2>Create Account</h2>
+    <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input type="text" formControlName="nameCtrl" matInput>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input type="email" formControlName="emailCtrl" matInput>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input type="password" formControlName="passwordCtrl" matInput>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Age</mat-label>
+        <input type="number" formControlName="ageCtrl" matInput>
+    </mat-form-field>
+    <mat-checkbox formControlName="isAdminCtrl" [labelPosition]="'before'">
+        Is user Admin?
+    </mat-checkbox>
+
+    <button (click)="registerUser()" [disabled]="userFg.invalid" mat-raised-button color="primary">Register</button>
+</form>
+
+<p>{{userFg.value | json}}</p>
+
+<button (click)="abstractOutput()" mat-raised-button color="warn">Test Abstract</button>
+
+
+<!-- <section *ngIf="userRes" class="response"> -->
+<section class="response" *ngIf="userRes">
+    <h2>{{userRes.name}}</h2>
+    <h2>{{userRes.email}}</h2>
+    <h2>{{userRes.password}}</h2>
+    <h2>{{userRes.age}}</h2>
+    <h2>{{userRes.isAdmin}}</h2>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <button (click)="registerUser()">Create User</button>
+
+<form [formGroup]="registerFg" (ngSubmit)="registerUser()">
+    <mat-label for="username">User Name</mat-label>
+    <input name="username" type="text" formControlName="nameCtrl" placeholder="Enter your name">
+</form> -->
