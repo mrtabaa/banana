@@ -21,7 +21,7 @@ export class AppComponent {
     emailCtrl: ['', [Validators.required, Validators.pattern(/^([\w\.\-]+)@([\w\-]+)((\.(\w){2,5})+)$/)]],
     passwordCtrl: ['', [Validators.required, Validators.minLength(8)]],
     ageCtrl: ['', [Validators.required, Validators.min(18), Validators.max(99)]],
-    isAdminCtrl: [false]
+    isAdminCtrl: [false, []] // default value, Empty validations list
   });
   //#endregion
 
